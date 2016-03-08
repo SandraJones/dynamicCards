@@ -36,7 +36,6 @@ function deleteButtonEventListener() {
 	for (var i = 0; i < erase.length; i++) {
     console.log(erase[i]);
     erase[i].addEventListener("click",function(event) {
-    	console.log(event);
     	
     	//container.removeAttribute(container);
     	//container.remove(event.srcElement);
