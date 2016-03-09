@@ -31,19 +31,17 @@ function createCard() {
    deleteButtonEventListener(); 
   }
 //have to put a delete button on each card as it is created
+function eraseContent (event) {
+  var thisCard = event.target.parentElement;
+  container.removeChild(thisCard)
+}
 
 function deleteButtonEventListener() {
 	for (var i = 0; i < erase.length; i++) {
     console.log(erase[i]);
-    erase[i].addEventListener("click",function(event) {
-    	
-    	//container.removeAttribute(container);
-    	//container.remove(event.srcElement);
-    	//container.remove(event.target.parentElement);  
-	});
-}        
+    var del = document.getElementsByClassName("delete")
+      for (var j=0; j< del.length; j++) {
+        del[j].addEventListener("click", eraseContent)
+      }
+  }  
 }
-//work on line 39 to figure out how to delete the card/container look into
-//the event and see if there is something else other than parentElement
-//card.remove or container.remove  it is moving to the target 
-
