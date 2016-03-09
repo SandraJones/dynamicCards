@@ -31,14 +31,15 @@ function createCard() {
    deleteButtonEventListener(); 
   }
 //have to put a delete button on each card as it is created
+//have to target the parent (container) to delete the child(which is the child of thr parent) and the delete button is the grandchild 
+//each time you click on delete button, take your parent and remove from the grandparent. the delete button is deleting itself and its parent.
 function eraseContent (event) {
   var thisCard = event.target.parentElement;
   container.removeChild(thisCard)
 }
-
+//
 function deleteButtonEventListener() {
 	for (var i = 0; i < erase.length; i++) {
-    console.log(erase[i]);
     var del = document.getElementsByClassName("delete")
       for (var j=0; j< del.length; j++) {
         del[j].addEventListener("click", eraseContent)
